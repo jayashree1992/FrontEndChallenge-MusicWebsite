@@ -1,0 +1,14 @@
+@import "../../stylesheets/config";
+@import "../../stylesheets/variables";
+
+.open-nav {
+  position: fixed;
+  font-size: 25px;
+  cursor: pointer;
+  color: $white;
+  top: 10px;
+  left: 20px;
+  border: none;
+  background-color: $tranparent;
+  z-index: -10;
+}

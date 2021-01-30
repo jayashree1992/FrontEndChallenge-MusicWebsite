@@ -1,0 +1,70 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/config";
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+.side-nav {
+  background: $primary;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  left: 0;
+  overflow: hidden;
+  transition: width 0.05s linear;
+  z-index: 1000;
+  @include media-md {
+    .close-nav {
+      display: none;
+    }
+  }
+  .logo {
+    width: 90%;
+    padding-left: 5%;
+  }
+  ul {
+    outline: 0;
+    margin: 0;
+    padding-left: 10%;
+    .nav-link {
+      margin-bottom: 10px;
+      position: relative;
+      display: table;
+      border-collapse: collapse;
+      border-spacing: 0;
+      color: $accent;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.1s linear;
+      &:hover {
+        color: $white;
+      }
+      .nav-text {
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        padding-left: 15%;
+        font-family: $font;
+        font-size: 15px;
+      }
+    }
+  }
+  .icon {
+    position: relative;
+    display: table-cell;
+    width: 20px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .close-nav {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 36px;
+    text-decoration: none;
+    color: $white;
+  }
+}
