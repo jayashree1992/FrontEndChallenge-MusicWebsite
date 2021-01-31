@@ -3,7 +3,7 @@ import logo from "../../assets/topBeatsLogo.png";
 import "./_sidebar.scss";
 import { navigationItems } from "../../constants";
 import { NavLink, withRouter } from "react-router-dom";
-import ShuffleOutlinedIcon from '@material-ui/icons/ShuffleOutlined';
+import CloseIcon from "@material-ui/icons/Close";
 
 const Sidebar = (props) => {
   return (
@@ -13,7 +13,7 @@ const Sidebar = (props) => {
         className="close-nav"
         onClick={props.onCancelClick}
       >
-      <ShuffleOutlinedIcon/>
+        <CloseIcon />
       </a>
       <NavLink to="/" exact className="nav-link">
         <img src={logo} className="logo" />

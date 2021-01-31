@@ -1,0 +1,21 @@
+@import "../../stylesheets/variables";
+
+.custom {
+  background-color: $primary-light !important;
+  border: none;
+  outline: 1px double $lighter-white;
+  outline-offset: -15px;
+}
+
+.play-icon {
+  color: $white;
+  width: 45px;
+  border: 1px solid $white;
+  border-radius: 50%;
+}
+
+.album-name {
+  font-family: $font;
+  color: $white;
+  opacity: 0.7;
+}
