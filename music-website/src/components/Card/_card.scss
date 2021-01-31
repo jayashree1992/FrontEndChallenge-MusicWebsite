@@ -1,21 +1,27 @@
 @import "../../stylesheets/variables";
+@import "../../stylesheets/config";
 
 .custom {
   background-color: $primary-light !important;
-  border: none;
+  border: none!important;
   outline: 1px double $lighter-white;
   outline-offset: -15px;
 }
 
 .play-icon {
   color: $white;
-  width: 45px;
-  border: 1px solid $white;
-  border-radius: 50%;
+  width:15%;
 }
 
 .album-name {
+  width:85%;
+  font-size: 12px;
   font-family: $font;
+  letter-spacing: 1px;
   color: $white;
   opacity: 0.7;
+  @include line-clamp(2,1.412);
+  @include media-md {
+    font-size: 13px;
+  }
 }
