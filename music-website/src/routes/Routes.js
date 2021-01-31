@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Home from "../screens/Home";
 import Album from "../screens/Album";
@@ -8,8 +8,9 @@ import Genre from "../screens/Genre";
 const Routes = () => (
   <Switch>
     <Route path="/" component={Home} exact />
-    <Route path="/album" component={Album} />
-    <Route path="/genre" component={Genre} />
+    <Route path="/album" component={Album} exact />
+    <Route path="/genre" component={Genre} exact />
+    <Redirect to={"/"}/> {/* This wil prevent user from getting 404 and any non existing url will be redirected to home page */}
   </Switch>
 );
 
