@@ -5,10 +5,14 @@ import { BrowserRouter } from 'react-router-dom';
 import './stylesheets/main.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import registerServiceWorker from './registerServiceWorker';
+import {Provider} from "react-redux";
+import Store from "./Store";
 
 ReactDOM.render(
     <BrowserRouter>
+    <Provider store={Store}>
       <App/>
+      </Provider>
     </BrowserRouter>,
     document.getElementById('root'),
 );
