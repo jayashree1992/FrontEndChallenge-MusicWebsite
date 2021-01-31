@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import Navigation from "../components/Navigation/Navigation";
+import Banner from "../components/Banner/Banner";
 import "../stylesheets/main.scss";
 
 const Home = () => {
@@ -12,7 +13,9 @@ const Home = () => {
           </div>
           <div
             className="col-md-10 m-0 p-0 content-box"
-          ></div>
+          >
+          <Banner />
+          </div>
         </div>
       </div>
     </Fragment>
