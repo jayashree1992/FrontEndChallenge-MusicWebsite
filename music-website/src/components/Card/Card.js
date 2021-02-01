@@ -6,9 +6,13 @@ const Card = (props) => {
   return (
     <div>
       <div className="card p-2 custom">
-        <img src={props.imgSource} alt="" className="card-img-top" />
+        <img
+          src={props.imgSource}
+          alt=""
+          className="card-img-top"
+          style={{ maxWidth: "100%!important" }}
+        />
       </div>
-
       <div className="card-body pl-3 pt-0">
         <div className="d-flex flex-row justify-content-between">
           <div class="album-name">{props.title}</div>

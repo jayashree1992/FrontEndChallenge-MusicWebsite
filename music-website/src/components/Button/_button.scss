@@ -1,0 +1,9 @@
+@import "../../stylesheets/variables";
+
+.link {
+  color: $white;
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}
