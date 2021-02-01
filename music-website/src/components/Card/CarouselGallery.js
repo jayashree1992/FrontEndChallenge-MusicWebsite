@@ -4,6 +4,7 @@ import Card from "./Card";
 import {useSelector } from "react-redux";
 import "react-multi-carousel/lib/styles.css";
 import _ from "lodash";
+import { NavLink } from "react-router-dom";
 import {ALBUM_LOAD_LIMIT as LIMIT} from "../../constants";
 
 const CarouselGallery = () => {
@@ -29,13 +30,12 @@ const CarouselGallery = () => {
     return (
       <Carousel responsive={responsive} autoPlay>
         {albumList.map((album) => (
-          <a href="#">
-            {" "}
+          <NavLink to="/album/1549768766">
             <Card
-              imgSource={_.get(album, "im:image[2].label")}
-              title={_.get(album, "title.label")}
+            imgSource={album.image_170}
+            title={album.name}
             />
-          </a>
+          </NavLink>
         ))}
       </Carousel>
     );

@@ -42,10 +42,10 @@ const Album = (props) => {
             <div className="row p-4">
               {redefinedAlbumList().map((album) => (
                 <div className="col-6 col-sm-4 col-md-4 col-lg-2">
-                  <NavLink to="/album/:album">
+                  <NavLink to="/album/1549768766">
                     <Card
-                      imgSource={_.get(album, "im:image[2].label")}
-                      title={_.get(album, "title.label")}
+                      imgSource={album.image_170}
+                      title={album.name}
                     />
                   </NavLink>
                 </div>

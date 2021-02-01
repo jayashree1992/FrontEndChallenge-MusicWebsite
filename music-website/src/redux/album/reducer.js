@@ -12,7 +12,7 @@ const AlbumListReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        albums: action.payload.feed.entry,
+        albums: action.payload,
         errorMsg: "",
       };
     }
