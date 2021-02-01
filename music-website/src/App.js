@@ -1,15 +1,25 @@
-import React, { Component } from "react";
+import React, { Fragment } from "react";
 import Routes from "./routes/Routes";
+import { useDispatch } from "react-redux";
+import { getAlbumList } from "./redux/album/action";
 import "./stylesheets/main.scss";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Routes />
-      </div>
-    );
-  }
-}
+const App = (props) => {
+  const dispatch = useDispatch();
+  
+  React.useEffect(() => {
+    fetchAlbumList();
+  }, []);
+
+  const fetchAlbumList = () => {
+    dispatch(getAlbumList());
+  };
+
+  return (
+    <Fragment>
+      <Routes />
+    </Fragment>
+  );
+};
 
 export default App;

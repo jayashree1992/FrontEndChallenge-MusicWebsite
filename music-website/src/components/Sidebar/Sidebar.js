@@ -19,9 +19,9 @@ const Sidebar = (props) => {
         <img src={logo} className="logo" />
       </NavLink>
       <ul>
-        {navigationItems.map((item) => {
+        {navigationItems.map((item, index) => {
           return (
-            <NavLink to={item.url} exact className="nav-link">
+            <NavLink to={item.url} exact className="nav-link" key={index}>
               {item.icon}
               <span className="nav-text">{item.name}</span>
             </NavLink>

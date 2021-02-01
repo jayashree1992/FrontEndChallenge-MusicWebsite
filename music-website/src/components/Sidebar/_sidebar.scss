@@ -1,5 +1,5 @@
 @import "../../stylesheets/variables";
-@import "../../stylesheets/config";
+@import "../../stylesheets/helper";
 
 @function color($color-name) {
   @return map-get($colors, $color-name);

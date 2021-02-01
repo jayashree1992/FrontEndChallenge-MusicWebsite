@@ -1,10 +1,10 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import Card from "./Card";
-import { useDispatch, useSelector } from "react-redux";
-import { getAlbumList } from "../../redux/album/action";
+import {useSelector } from "react-redux";
 import "react-multi-carousel/lib/styles.css";
 import _ from "lodash";
+import {ALBUM_LOAD_LIMIT as LIMIT} from "../../constants";
 
 const CarouselGallery = () => {
   const responsive = {
@@ -22,21 +22,13 @@ const CarouselGallery = () => {
     },
   };
 
-  const dispatch = useDispatch();
-  const albumList = useSelector((state) => state.AlbumList);
-
-  React.useEffect(() => {
-    fetchAlbumList();
-  }, []);
-
-  const fetchAlbumList = () => {
-    dispatch(getAlbumList(10));
-  };
+  const list = useSelector((state) => state.AlbumList.albums);
+  const albumList = _.slice(list, 0, LIMIT);
 
   const showAlbums = () => {
     return (
       <Carousel responsive={responsive} autoPlay>
-        {albumList.albums.map((album) => (
+        {albumList.map((album) => (
           <a href="#">
             {" "}
             <Card
@@ -49,7 +41,7 @@ const CarouselGallery = () => {
     );
   };
 
-  return <div className="p-4">{albumList.loading ? null : showAlbums()}</div>;
+  return <div className="p-4">{showAlbums()}</div>;
 };
 
 export default CarouselGallery;

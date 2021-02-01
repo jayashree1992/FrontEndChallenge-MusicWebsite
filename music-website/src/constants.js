@@ -7,3 +7,5 @@ export const navigationItems = [
   { name: "Album", icon: <AlbumOutlinedIcon />, url: "/album" },
   { name: "Genre", icon: <RadioRoundedIcon />, url: "/genre" },
 ];
+
+export const ALBUM_LOAD_LIMIT = 12;

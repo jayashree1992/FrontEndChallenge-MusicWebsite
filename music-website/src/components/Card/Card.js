@@ -15,8 +15,8 @@ const Card = (props) => {
       </div>
       <div className="card-body pl-3 pt-0">
         <div className="d-flex flex-row justify-content-between">
-          <div class="album-name">{props.title}</div>
-          <div class="play-icon pl-2 ">
+          <div className="album-name">{props.title}</div>
+          <div className="play-icon pl-2 ">
             <SlowMotionVideoIcon fontSize="small" />
           </div>
         </div>
