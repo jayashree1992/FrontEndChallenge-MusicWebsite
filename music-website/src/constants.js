@@ -1,11 +1,13 @@
 import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
 import RadioRoundedIcon from "@material-ui/icons/RadioRounded";
 import AlbumOutlinedIcon from "@material-ui/icons/AlbumOutlined";
+import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 
 export const navigationItems = [
   { name: "Home", icon: <HomeOutlinedIcon />, url: "/" },
   { name: "Album", icon: <AlbumOutlinedIcon />, url: "/album" },
   { name: "Genre", icon: <RadioRoundedIcon />, url: "/genre" },
+  { name: "Playlist", icon: <LibraryMusicIcon />, url: "/playlist" },
 ];
 
 export const ALBUM_LOAD_LIMIT = 12;
