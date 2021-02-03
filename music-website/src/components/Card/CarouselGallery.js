@@ -1,47 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 import Card from "./Card";
-import {useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { ALBUM_LOAD_LIMIT as LIMIT, responsiveCarousel } from "../../constants";
 import "react-multi-carousel/lib/styles.css";
 import _ from "lodash";
-import { NavLink } from "react-router-dom";
-import {ALBUM_LOAD_LIMIT as LIMIT} from "../../constants";
+import PLayListModal from "../../components/PlayList/PlayListModal";
 
 const CarouselGallery = () => {
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 6,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 4,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 2,
-    },
-  };
-
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentAlbumId, setCurrentAlbumId] = useState(null);
   const list = useSelector((state) => state.AlbumList.albums);
   const albumList = _.slice(list, 0, LIMIT);
 
+  const handleModalOpen = (albumId) => {
+    setModalOpen(true);
+    setCurrentAlbumId(albumId);
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
   const showAlbums = () => {
     return (
-      <Carousel responsive={responsive} autoPlay>
+      <Carousel responsive={responsiveCarousel} autoPlay>
         {albumList.map((album) => (
-          <NavLink to="/album/1549768766">
-            <Card
+          <Card
+            isFlip={true}
             imgSource={album.image_170}
             title={album.name}
-            />
-          </NavLink>
+            artist={album.artist}
+            link={album.link}
+            handleModalOpen={() => handleModalOpen(album.id)}
+          />
         ))}
       </Carousel>
     );
   };
-
-  return <div className="p-4">{showAlbums()}</div>;
+  return (
+    <div className="p-4">
+      {showAlbums()}
+      <PLayListModal
+        open={modalOpen}
+        handleModalClose={handleModalClose}
+        albumId={currentAlbumId}
+      />
+    </div>
+  );
 };
 
 export default CarouselGallery;

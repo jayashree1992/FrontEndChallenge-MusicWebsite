@@ -9,3 +9,18 @@ export const navigationItems = [
 ];
 
 export const ALBUM_LOAD_LIMIT = 12;
+
+export const responsiveCarousel = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1200 },
+    items: 5,
+  },
+  tablet: {
+    breakpoint: { max: 1200, min: 464 },
+    items: 3,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 2,
+  },
+};

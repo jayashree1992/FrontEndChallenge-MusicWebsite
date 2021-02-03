@@ -1,34 +1,28 @@
 import React, { Fragment } from "react";
-import Navigation from "../components/Navigation/Navigation";
+import MainWrapper from "../components/MainWrapper/MainWrapper";
 import Banner from "../components/Banner/Banner";
-import "../stylesheets/main.scss";
 import CarouselGallery from "../components/Card/CarouselGallery";
 import Button from "../components/Button/Button";
-import "react-multi-carousel/lib/styles.css";
 
-const Home = () => {
+//function to render home page components
+const homePageContent = () => {
   return (
     <Fragment>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-2 m-0 p-0">
-            <Navigation />
-          </div>
-          <div className="col-md-10 m-0 p-0 content-box">
-            <Banner />
-            <div className="p-4">
-              <Button
-                url="/album"
-                label="See more"
-                customStyle="react-multi-carousel-list browse-btn"
-              />
-            </div>
-            <CarouselGallery />
-          </div>
-        </div>
+      <Banner />
+      <div className="p-4">
+        <Button
+          url="/album"
+          label="See more"
+          customStyle="react-multi-carousel-list browse-btn"
+        />
       </div>
+      <CarouselGallery />
     </Fragment>
   );
+};
+
+const Home = () => {
+  return <MainWrapper content={homePageContent()} />;
 };
 
 export default Home;
