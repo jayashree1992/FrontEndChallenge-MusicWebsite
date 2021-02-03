@@ -20,7 +20,7 @@
     .front {
       grid-area: frontAndBack;
       background-color: $primary-light !important;
-      border: none!important;
+      border: none !important;
       .custom {
         background-color: $primary-light !important;
         border: none !important;
@@ -79,7 +79,7 @@
         }
       }
     }
-    &:hover{
+    &:hover {
       transform: rotateY(180deg);
     }
   }
@@ -104,22 +104,23 @@
       font-size: 14px;
       margin-top: -10px;
     }
-    &:hover{
+    &:hover {
       color: $highlight;
     }
   }
   .view-ico {
     font-size: 10px;
+    color: $lighter-white;
     margin-top: -35px;
     @include media-md {
       font-size: 13px;
       margin-top: -20px;
     }
-    &:hover{
+    &:hover {
       color: $highlight;
     }
   }
-  .add-btn{
+  .add-btn {
     background-color: $tranparent;
     border: none;
     color: $lighter-white;
@@ -132,12 +133,11 @@
         font-size: 15px;
         margin-top: -35px;
       }
-      &:hover{
+      &:hover {
         color: $highlight;
       }
     }
   }
- 
 }
 
 .album-artist-name-wrapper {
@@ -168,6 +168,3 @@
   background-color: $primary-light !important;
   border: none !important;
 }
-
-
-

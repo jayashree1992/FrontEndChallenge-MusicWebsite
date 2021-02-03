@@ -27,11 +27,8 @@ const CarouselGallery = () => {
         {albumList.map((album) => (
           <Card
             isFlip={true}
-            imgSource={album.image_170}
-            title={album.name}
-            artist={album.artist}
-            link={album.link}
             handleModalOpen={() => handleModalOpen(album.id)}
+            id={album.id}
           />
         ))}
       </Carousel>

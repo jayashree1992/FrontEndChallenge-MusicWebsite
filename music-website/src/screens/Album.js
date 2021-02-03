@@ -53,11 +53,8 @@ const Album = (props) => {
             <div className="col-6 col-sm-4 col-md-4 col-lg-2 p-2">
               <Card
                 isFlip={false}
-                imgSource={album.image_170}
-                title={album.name}
-                artist={album.artist}
-                link={album.link}
-                handleModalOpen={()=> handleModalOpen(album.id)}
+                handleModalOpen={() => handleModalOpen(album.id)}
+                id={album.id}
               />
             </div>
           ))}

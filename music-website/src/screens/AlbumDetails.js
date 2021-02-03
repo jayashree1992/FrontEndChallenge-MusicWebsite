@@ -1,9 +1,13 @@
-import React from 'react';
+import React from "react";
 
 const AlbumDetails = (props) => {
-return(
-    <h1>AlbumDetails</h1>
-)
-}
+  const albumDetails = props.location.albumDetail;
+  return (
+    <h1>
+      AlbumDetails
+      <span>{albumDetails.name}</span>
+    </h1>
+  );
+};
 
 export default AlbumDetails;
