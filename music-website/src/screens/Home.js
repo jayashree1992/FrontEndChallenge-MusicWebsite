@@ -10,20 +10,6 @@ import Button from "../components/Button/Button";
 import SearchBar from "../components/SearchBar/SearchBar";
 
 const Home = () => {
-
-  // const handleKeyPress = (e) => {
-  //   if (e.key === "Enter") {
-  //     const searchTerm = e.target.value
-  //     const results = list.filter((album) =>
-  //     album.namePlusArtist
-  //         .toString()
-  //         .toLowerCase()
-  //         .includes(searchTerm.toString().toLowerCase())
-  //     );
-  //     setSearchResults(results);
-  //   }
-  // };
-
   //function to render home page components
   const homePageContent = () => {
     return (  
