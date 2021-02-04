@@ -28,7 +28,7 @@ const CarouselGallery = () => {
           <Card
             isFlip={true}
             handleModalOpen={() => handleModalOpen(album.id)}
-            id={album.id}
+            albumDetail={album}
           />
         ))}
       </Carousel>

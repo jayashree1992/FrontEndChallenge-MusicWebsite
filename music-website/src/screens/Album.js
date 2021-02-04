@@ -54,7 +54,7 @@ const Album = (props) => {
               <Card
                 isFlip={false}
                 handleModalOpen={() => handleModalOpen(album.id)}
-                id={album.id}
+                albumDetail={album}
               />
             </div>
           ))}
