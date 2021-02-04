@@ -8,6 +8,7 @@ import SaveIcon from "@material-ui/icons/Save";
 import Button from "@material-ui/core/Button";
 import { useDispatch } from "react-redux";
 import { setPlayList } from "../../redux/playlist/action"
+import { useSnackbar } from 'notistack';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -24,12 +25,26 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const PlayListModal = (props) => {
+  const { enqueueSnackbar } = useSnackbar();
   const classes = useStyles();
   const dispatch = useDispatch();
   const [selectedPlayListName, setSelectedPlayListName] = useState('');
 
+  const popUpSnackBar = () => {
+    const message = `Saved to playlist ${selectedPlayListName}!`;
+    enqueueSnackbar(message, {
+      anchorOrigin: {
+          vertical: 'top',
+          horizontal: 'right',
+          autoHideDuration: 3000,
+          variant: 'success'
+      },
+  });
+  }
+
   const handleSave = () => {    
     dispatch(setPlayList(selectedPlayListName, props.albumId));
+    popUpSnackBar();
     props.handleModalClose();     
   }
 

@@ -7,11 +7,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import registerServiceWorker from "./registerServiceWorker";
 import { Provider } from "react-redux";
 import Store from "./Store";
+import { SnackbarProvider } from "notistack";
 
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={Store}>
-      <App />
+      <SnackbarProvider maxSnack={3}>
+        <App />
+      </SnackbarProvider>
     </Provider>
   </BrowserRouter>,
   document.getElementById("root")

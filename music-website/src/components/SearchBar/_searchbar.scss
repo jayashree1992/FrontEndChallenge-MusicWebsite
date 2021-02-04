@@ -1,0 +1,14 @@
+@import "../../stylesheets/variables";
+
+.search-bar{
+  background-color:$tranparent;
+  font-size:12px;
+  top:30px;
+  right:30px;
+  padding:5px 15px;
+  position:absolute; 
+  border:1px solid white;
+  border-radius:15px;
+  color:$white;
+  outline: none;
+}

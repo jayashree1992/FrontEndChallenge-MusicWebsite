@@ -1,0 +1,24 @@
+// import React from 'react';
+// import Button from '@material-ui/core/Button';
+// import { SnackbarProvider, useSnackbar } from 'notistack';
+
+// const Toast = () => {
+//   const { enqueueSnackbar } = useSnackbar();
+
+//   const handleClickVariant = (variant) => () => {
+//     // variant could be success, error, warning, info, or default
+//     enqueueSnackbar('This is a success message!', { variant });
+//   };
+
+//   return (
+//     <Button onClick={handleClickVariant('success')} />
+//   );
+// }
+
+// export default function IntegrationNotistack() {
+//   return (
+//     <SnackbarProvider maxSnack={3}>
+//       <Toast />
+//     </SnackbarProvider>
+//   );
+// }
