@@ -4,6 +4,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import "./stylesheets/main.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'mdbreact/dist/css/mdb.css';
 import registerServiceWorker from "./registerServiceWorker";
 import { Provider } from "react-redux";
 import Store from "./Store";

@@ -12,6 +12,7 @@ import ListBox from "../components/ListBox/ListBox";
 import { useSelector } from "react-redux";
 import PLayListModal from "../components/PlayList/PlayListModal";
 import ColoredBlock from "../components/ColoredBlock/ColoredBlock";
+import {uniqueCategories} from "../utils/helpers";
 
 const Home = () => {
   const list = useSelector((state) => state.AlbumList.albums);
@@ -25,6 +26,11 @@ const Home = () => {
 
   //Getting top five results from the sorted list of albums
   const topFiveLatestAlbums = latestAlbums.slice(0, 5);
+
+  const categories = uniqueCategories(list);
+
+  //Getting six results from the list of categories
+  const limitedUniqueCategories = categories.slice(0, 6);
 
   const handleModalOpen = (albumId) => {
     setModalOpen(true);
@@ -65,7 +71,7 @@ const Home = () => {
 
           <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 mt-4 mt-lg-0">
             <div className="heading pb-2 ml-1">{`Genre`}</div>
-            <ColoredBlock />
+            <ColoredBlock categories={limitedUniqueCategories}/>
           </div>
         </div>
 

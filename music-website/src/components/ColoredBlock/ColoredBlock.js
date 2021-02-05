@@ -6,34 +6,34 @@ const ColoredBlock = (props) => {
   return (
     <Fragment>
       <div className="d-flex mr-2 custom-col">
-        <NavLink to="/" className="col-4 m-1 inner sea-green">{`Jazz`}</NavLink>
+        <NavLink to="/" className="col-4 m-1 inner sea-green">{props.categories[0]}</NavLink>
 
         <NavLink
           to="/"
           className="col-8 m-1 inner ochre-yellow"
-        >{`Musicals`}</NavLink>
+        >{props.categories[1]}</NavLink>
       </div>
 
       <div className="d-flex mr-2 custom-col">
         <NavLink
           to="/"
           className="col-6 m-1 inner chrimson-red"
-        >{`Classical`}</NavLink>
+        >{props.categories[2]}</NavLink>
         <NavLink
           to="/"
           className="col-6 m-1 inner magenta"
-        >{`Electronic`}</NavLink>
+        >{props.categories[3]}</NavLink>
       </div>
 
       <div className="d-flex mr-2 custom-col">
         <NavLink
           to="/"
-          className="col-8 m-1 inner light-violet"
-        >{`Country`}</NavLink>
+          className="col-4 m-1 inner light-violet"
+        >{props.categories[4]}</NavLink>
         <NavLink
           to="/"
-          className="col-4 m-1 inner bright-pink"
-        >{`Rock`}</NavLink>
+          className="col-8 m-1 inner bright-pink"
+        >{props.categories[5]}</NavLink>
       </div>
     </Fragment>
   );
