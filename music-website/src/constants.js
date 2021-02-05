@@ -2,11 +2,13 @@ import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
 import RadioRoundedIcon from "@material-ui/icons/RadioRounded";
 import AlbumOutlinedIcon from "@material-ui/icons/AlbumOutlined";
 import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
+import StarsIcon from '@material-ui/icons/Stars';
 
 export const navigationItems = [
   { name: "Home", icon: <HomeOutlinedIcon />, url: "/" },
   { name: "Album", icon: <AlbumOutlinedIcon />, url: "/album" },
   { name: "Genre", icon: <RadioRoundedIcon />, url: "/genre" },
+  { name: "Favorite", icon: <StarsIcon />, url: "/favorites" },
   { name: "Playlist", icon: <LibraryMusicIcon />, url: "/playlist" },
 ];
 

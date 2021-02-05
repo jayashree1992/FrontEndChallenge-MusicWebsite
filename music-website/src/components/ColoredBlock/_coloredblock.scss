@@ -1,0 +1,38 @@
+@import "../../stylesheets/helper";
+@import "../../stylesheets/variables";
+
+.custom-col {
+  height: 114px;
+  text-align: center;
+  line-height: 100px;
+  font-family: $font;
+  color: $white;
+  font-weight: bold;
+  font-size: 18px;
+  .inner {
+    text-decoration: none;
+    color: $white;
+    border-radius: 5px;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  .sea-green {
+    background-color: $sea-green;
+  }
+  .ochre-yellow {
+    background-color: $ochre-yellow;
+  }
+  .chrimson-red {
+    background-color: $chrimson-red;
+  }
+  .magenta {
+    background-color: $magenta;
+  }
+  .light-violet {
+    background-color: $light-violet;
+  }
+  .bright-pink {
+    background-color: $bright-pink;
+  }
+}

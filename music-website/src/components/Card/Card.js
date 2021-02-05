@@ -4,11 +4,11 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import PlaylistAddIcon from "@material-ui/icons/PlaylistAdd";
 import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import _ from "lodash";
-import FavoriteIcon from "@material-ui/icons/Favorite";
 import { addFavorites, removeFavorites } from "../../redux/favorites/action";
 
 const Card = (props) => {

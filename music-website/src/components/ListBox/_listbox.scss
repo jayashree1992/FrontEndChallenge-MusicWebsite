@@ -1,0 +1,81 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/helper";
+
+.heading {
+  color: $highlight;
+  font-family: $font;
+  font-size: 18px;
+}
+
+.cust-list-box {
+  color: $lighter-white;
+  font-size: 10px;
+  font-family: $font;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding-left: 10px;
+  background-color: #191727;
+  .artist-name {
+    font-style: italic;
+  }
+  .ico-block button {
+    background-color: $tranparent;
+    color: $lighter-white;
+    border: none;
+    .list-ico-20 {
+      font-size: 13px;
+    }
+    .list-ico-22 {
+      font-size: 15px;
+    }
+    .heart-ico-filled {
+      color: $highlight;
+    }
+    &:hover {
+      color: $white;
+    }
+  }
+  .view-ico {
+    font-size: 13px;
+    color: $lighter-white;
+    &:hover {
+      color: $white;
+    }
+  }
+  @include media-md {
+    font-size: 14px;
+    margin-top: -10px;
+    .ico-block button {
+      .list-ico-20 {
+        font-size: 20px;
+      }
+      .list-ico-22 {
+        font-size: 22px;
+      }
+      &:hover {
+        color: $white;
+      }
+    }
+    .view-ico {
+      font-size: 20px;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+  &:hover {
+    background-color: #1b1929;
+    color: $white;
+  }
+}
+
+.img-round {
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  @include media-md {
+    width: 40px;
+    height: 40px;
+  }
+}
