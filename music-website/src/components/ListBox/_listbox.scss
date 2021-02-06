@@ -3,14 +3,12 @@
 
 .heading {
   color: $highlight;
-  font-family: $font;
   font-size: 18px;
 }
 
 .cust-list-box {
   color: $white;
   font-size: 10px;
-  font-family: $font;
   letter-spacing: 1px;
   margin-bottom: 5px;
   border-radius: 5px;
@@ -25,10 +23,10 @@
     color: $lighter-white;
     border: none;
     .list-ico-20 {
-      font-size: 13px;
+      font-size: 18px;
     }
     .list-ico-22 {
-      font-size: 15px;
+      font-size: 20px;
     }
     .heart-ico-filled {
       color: $highlight;
@@ -38,7 +36,7 @@
     }
   }
   .view-ico {
-    font-size: 13px;
+    font-size: 18px;
     color: $lighter-white;
     &:hover {
       color: $white;
@@ -49,17 +47,17 @@
     margin-top: -10px;
     .ico-block button {
       .list-ico-20 {
-        font-size: 20px;
+        font-size: 18px;
       }
       .list-ico-22 {
-        font-size: 22px;
+        font-size: 20px;
       }
       &:hover {
         color: $white;
       }
     }
     .view-ico {
-      font-size: 20px;
+      font-size: 18px;
       &:hover {
         color: $white;
       }

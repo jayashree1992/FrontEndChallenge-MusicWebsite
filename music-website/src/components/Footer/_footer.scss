@@ -1,0 +1,57 @@
+@import "../../stylesheets/variables";
+@import "../../stylesheets/helper";
+
+.footer-header {
+  text-align: center;
+  margin-bottom: 100px;
+  padding-top: 100px;
+  .seperator {
+    margin: auto;
+    width: 300px;
+    height: 1px;
+    background-color: $lighter-white;
+  }
+  .footer-icon {
+    position: relative;
+    top: -25px;
+    background-color: $primary-light;
+    border: 1px solid $lighter-white;
+    color: $highlight;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    font-size: 10px;
+    padding: 10px;
+  }
+  .text-style-one {
+    font-size: 12px;
+    color: $white;
+  }
+
+  .text-style-two {
+    font-size: 25px;
+    color: $highlight;
+    letter-spacing: 7px;
+    margin-top: 5px;
+  }
+
+  .address {
+    text-align: center;
+    color: $white;
+    margin-top: 15px;
+  }
+
+  .call-email-icon {
+    text-align: center;
+    color: $highlight;
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  .social-icons {
+    margin-top: 10px;
+    a {
+      color: $white;
+      margin: 10px;
+    }
+  }
+}

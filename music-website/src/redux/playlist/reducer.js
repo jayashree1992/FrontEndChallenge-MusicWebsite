@@ -1,27 +1,26 @@
+import { filter } from 'lodash';
 import {
   SET_PLAY_LIST,
   REMOVE_PLAYLIST,
   REMOVE_ALBUM_FROM_PLAYLIST,
-} from "./types";
-import { filter } from "lodash";
+} from './types';
 
 const initialState = {
   playLists: {},
 };
 
 const PlayListReducer = (state = initialState, action) => {
-  const playListPresent = (playLists, playListName) => {
-    return playLists[playListName] === (null || undefined) ? false : true;
-  };
+  const playListPresent = (playLists, playListName) => playLists[playListName]
+    !== (null || undefined);
 
   switch (action.type) {
     case SET_PLAY_LIST: {
-      let playLists = { ...state.playLists };
-      const playListName = action.playListName;
-      const albumId = action.albumId;
+      const playLists = { ...state.playLists };
+      const { playListName } = action;
+      const { albumId } = action;
 
       if (playListPresent(playLists, playListName)) {
-        let uniqueAlbums = new Set(playLists[playListName]);
+        const uniqueAlbums = new Set(playLists[playListName]);
         uniqueAlbums.add(albumId);
         playLists[playListName] = Array.from(uniqueAlbums);
       } else {
@@ -29,25 +28,24 @@ const PlayListReducer = (state = initialState, action) => {
       }
 
       return {
-        playLists: playLists,
+        playLists,
       };
     }
 
     case REMOVE_PLAYLIST: {
-      let playLists = { ...state.playLists };
+      const playLists = { ...state.playLists };
       delete playLists[action.playListName];
 
       return {
-        playLists: playLists,
+        playLists,
       };
     }
 
     case REMOVE_ALBUM_FROM_PLAYLIST: {
-      let newPlayList = {...state.playLists};
+      const newPlayList = { ...state.playLists };
       let albumsInCurrentPlayList = newPlayList[action.playListName];
-      albumsInCurrentPlayList = filter(albumsInCurrentPlayList, (albumId) => {
-        return albumId !== action.albumId;
-      });
+      albumsInCurrentPlayList = filter(albumsInCurrentPlayList,
+        albumId => albumId !== action.albumId);
 
       newPlayList[action.playListName] = albumsInCurrentPlayList;
 

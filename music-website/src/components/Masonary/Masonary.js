@@ -1,18 +1,15 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { MDBRow } from "mdbreact";
-import "./_masonary.scss";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { MDBRow } from 'mdbreact';
+import { formatGenre } from '../../utils/helpers';
+import './_masonary.scss';
 
-const Masonary = (props) => {
-  return (
-    <div className="masonary-wrapper">
+const Masonary = props => (
+  <div className="masonary-wrapper">
     <MDBRow className="masonry-with-columns-2">
-      {props.categories.map((category) => {
-        return <NavLink to="/" className="cat">{category}</NavLink>;
-      })}
+      {props.categories.map(category => <NavLink to={`/genre/${formatGenre(category)}`} className="cat">{category}</NavLink>)}
     </MDBRow>
-    </div>
-  );
-};
+  </div>
+);
 
 export default Masonary;

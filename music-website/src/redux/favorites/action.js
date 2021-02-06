@@ -1,16 +1,15 @@
-import { SET_FAV, REMOVE_FAV } from "./types";
+import { SET_FAV, REMOVE_FAV } from './types';
 
-export const addFavorites = (albumId) => async (dispatch) => {
+export const addFavorites = albumId => async dispatch => {
   dispatch({
     type: SET_FAV,
-    albumId: albumId,
+    albumId,
   });
 };
 
-export const removeFavorites = (albumId) => async (dispatch) => {
+export const removeFavorites = albumId => async dispatch => {
   dispatch({
     type: REMOVE_FAV,
-    albumId: albumId,
+    albumId,
   });
 };
-

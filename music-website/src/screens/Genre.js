@@ -1,20 +1,21 @@
-import React from "react";
-import MainWrapper from "../components/MainWrapper/MainWrapper";
-import Masonary from "../components/Masonary/Masonary";
-import { useSelector } from "react-redux";
-import {uniqueCategories} from "../utils/helpers";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import MainWrapper from '../components/MainWrapper/MainWrapper';
+import Masonary from '../components/Masonary/Masonary';
+import { uniqueCategories } from '../utils/helpers';
 
 const Genre = () => {
   // getting the entire album list from redux
-  const albumList = useSelector((state) => state.AlbumList.albums);
+  const list = useSelector(state => state.AlbumList.albums);
+  const albumList = Object.values(list);
 
   const categories = uniqueCategories(albumList);
 
-  const genreContent = () => {
-    return <Masonary categories={categories} />;
-  };
-
-  return <MainWrapper content={genreContent()} />;
+  return (
+    <MainWrapper>
+      <Masonary categories={categories} />
+    </MainWrapper>
+  );
 };
 
 export default Genre;

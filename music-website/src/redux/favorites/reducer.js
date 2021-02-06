@@ -1,5 +1,5 @@
-import { SET_FAV, REMOVE_FAV } from "./types";
-import { filter } from "lodash";
+import { filter } from 'lodash';
+import { SET_FAV, REMOVE_FAV } from './types';
 
 const initialState = {
   favorites: [],
@@ -14,9 +14,7 @@ const FavoriteReducer = (state = initialState, action) => {
     }
 
     case REMOVE_FAV: {
-      const newFavorites = filter(state.favorites, (element) => {
-        return element !== action.albumId;
-      });
+      const newFavorites = filter([...state.favorites], element => element !== action.albumId);
       return {
         favorites: newFavorites,
       };

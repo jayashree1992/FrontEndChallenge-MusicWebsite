@@ -1,2 +1,2 @@
-export const SET_ALBUM_LIST = "SET_ALBUM_LIST";
-export const ALBUM_LIST_FAIL = "ALBUM_LIST_FAIL";
+export const SET_ALBUM_LIST = 'SET_ALBUM_LIST';
+export const ALBUM_LIST_FAIL = 'ALBUM_LIST_FAIL';

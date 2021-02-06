@@ -21,27 +21,18 @@
         padding: 0px;
       }
       .heart-ico {
-        font-size: 12px;
+        font-size: 18px;
         margin-right: 5px;
-        @include media-md {
-          font-size: 18px;
-        }
       }
       .heart-ico-filled {
         color: $highlight;
-        font-size: 12px;
+        font-size: 18px;
         margin-right: 5px;
-        @include media-md {
-          font-size: 18px;
-        }
       }
       .view-ico {
-        font-size: 12px;
+        font-size: 18px;
         color: $lighter-white;
         margin-right: 5px;
-        @include media-md {
-          font-size: 18px;
-        }
         &:hover {
           color: $highlight;
         }
@@ -53,10 +44,7 @@
         margin: 0px;
         padding: 0px;
         .add-ico {
-          font-size: 15px;
-          @include media-md {
-            font-size: 22px;
-          }
+          font-size: 20px;
           &:hover {
             color: $highlight;
           }
@@ -67,33 +55,45 @@
 }
 
 .play-ico {
+  background-color: $highlight;
+  opacity: 0.99;
+  width: 37px !important;
+  height: 30px !important;
   margin-top: -25px;
+  padding-top: 2px;
+  padding-left: 3px;
+  border-radius: 100px;
   a {
-    width: 18%;
     color: $white;
-    opacity: 0.9;
+    opacity: 0.99;
     &:hover {
-      color: $highlight;
+      color: $white;
     }
+  }
+  &:hover {
+    opacity: 0.9;
+  }
+  @include media-md {
+    font-size: 10px;
+    font-style: italic;
+    width: 32px !important;
   }
 }
 
 .album-artist-name-wrapper {
   width: 90%;
   .artist-name {
-    font-size: 8px;
+    font-size: 10px;
     color: $lighter-white;
     margin-top: 2px;
     @include line-clamp(1, 1.412);
     @include media-md {
-      font-size: 10px;
+      font-size: 13px;
       font-style: italic;
     }
   }
   .album-name {
-    font-weight: bold;
     font-size: 10px;
-    font-family: $font;
     letter-spacing: 0.5px;
     color: $white;
     @include line-clamp(1, 1.412);

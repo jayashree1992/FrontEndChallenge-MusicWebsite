@@ -1,31 +1,29 @@
-import React from "react";
-import _ from "lodash";
-import ListBox from "../../components/ListBox/ListBox";
-import "./_accordian.scss";
-import DeleteIcon from "@material-ui/icons/Delete";
-import { useSelector, useDispatch } from "react-redux";
-import { removePlayList } from "../../redux/playlist/action";
+import React from 'react';
+import _ from 'lodash';
+import './_accordian.scss';
+import { useSelector, useDispatch } from 'react-redux';
+import DeleteIcon from '@material-ui/icons/Delete';
 import {
   Accordion,
   AccordionItem,
   AccordionItemHeading,
   AccordionItemButton,
   AccordionItemPanel,
-} from "react-accessible-accordion";
+} from 'react-accessible-accordion';
+import ListBox from '../ListBox/ListBox';
+import { removePlayList } from '../../redux/playlist/action';
 
-const Accordian = (props) => {
+const Accordian = props => {
   const dispatch = useDispatch();
-  const albumList = useSelector((state) => state.AlbumList.albums);
-  const playListAlbums = _.filter(albumList, (o) =>
-    props.albumIds.includes(o.id)
+  const list = useSelector(state => state.AlbumList.albums);
+  const albumList = Object.values(list);
+  const playListAlbums = _.filter(albumList, o => props.albumIds.includes(o.id)
   );
-  const playListName = props.playListName;
+  const { playListName } = props;
 
-  const playListDetails = (album) => {
-    return (
-      <ListBox album={album} isPlayList={true} playListName={playListName} />
-    );
-  };
+  const playListDetails = album => (
+    <ListBox album={album} isPlayList playListName={playListName} />
+  );
 
   const deletePlaylist = () => {
     dispatch(removePlayList(playListName));
@@ -35,7 +33,7 @@ const Accordian = (props) => {
     <Accordion allowZeroExpanded>
       <AccordionItem>
         <button onClick={deletePlaylist} className="del-play-btn">
-          {`Delete Playlist`}
+          <DeleteIcon />
         </button>
         <AccordionItemHeading className="aco-heading">
           <AccordionItemButton>{playListName}</AccordionItemButton>
@@ -43,10 +41,8 @@ const Accordian = (props) => {
 
         <AccordionItemPanel>
           <div className="accordian-playlists">
-            {" "}
-            {playListAlbums.map((album) => {
-              return playListDetails(album);
-            })}
+            {' '}
+            {playListAlbums.map(album => playListDetails(album))}
           </div>
         </AccordionItemPanel>
       </AccordionItem>

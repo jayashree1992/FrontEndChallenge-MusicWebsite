@@ -2,10 +2,10 @@
 @import "../../stylesheets/variables";
 
 .open-nav {
-  position: fixed;
+  position: relative!important;
   font-size: 25px;
   cursor: pointer;
-  color: $white;
+  color:$white;
   top: 10px;
   left: 20px;
   border: none;

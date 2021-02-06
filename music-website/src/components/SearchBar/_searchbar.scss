@@ -1,14 +1,20 @@
 @import "../../stylesheets/variables";
+@import "../../stylesheets/helper";
 
-.search-bar{
-  background-color:$tranparent;
-  font-size:12px;
-  top:30px;
-  right:30px;
-  padding:5px 15px;
-  position:absolute; 
-  border:1px solid white;
-  border-radius:15px;
-  color:$white;
+.search-bar {
+  color: $lighter-white;
+  background-color: $tranparent;
+  font-size: 10px;
+  top: 30px;
+  right: 30px;
+  padding: 3px 7px;
+  position: absolute;
+  border: 1px solid white;
+  border-radius: 15px;
+  color: $white;
   outline: none;
+  @include media-md {
+    font-size: 12px;
+    padding: 5px 15px;
+  }
 }

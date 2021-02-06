@@ -1,22 +1,24 @@
-import React from "react";
-import Accordian from "../components/Accordian/Accordian";
-import MainWrapper from "../components/MainWrapper/MainWrapper";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { isEmpty } from 'lodash';
+import Accordian from '../components/Accordian/Accordian';
+import MainWrapper from '../components/MainWrapper/MainWrapper';
+import EmptyResults from '../components/EmptyResults/EmptyResults';
 
 const PlayList = () => {
-  const playList = useSelector((state) => state.PlayList.playLists);
-
-  const accordianContent = () => {
-    return (
-      <div style={{ width: "80%", marginLeft: "10%", marginTop: "20px" }}>
-        {Object.keys(playList).map(function (key) {
-          return <Accordian playListName={key} albumIds={playList[key]} />;
-        })}
-      </div>
-    );
-  };
-
-  return <MainWrapper content={accordianContent()} />;
+  const playList = useSelector(state => state.PlayList.playLists);
+  return (
+    <MainWrapper>
+      {!isEmpty(playList) ? (
+        <div className="playlist-wrapper">
+          {Object.keys(playList)
+            .map(key => <Accordian playListName={key} albumIds={playList[key]} />)}
+        </div>
+      ) : (
+        <EmptyResults mainwrapper={false} msg="Playlists yet!" btnMsg="Make your Playlist" />
+      )}
+    </MainWrapper>
+  );
 };
 
 export default PlayList;

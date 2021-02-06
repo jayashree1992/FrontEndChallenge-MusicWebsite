@@ -1,9 +1,9 @@
-import { SET_ALBUM_LIST, ALBUM_LIST_FAIL } from "./types";
+import { SET_ALBUM_LIST, ALBUM_LIST_FAIL } from './types';
 
 const initialState = {
   loading: true,
-  albums: [],
-  errorMsg: "",
+  albums: {},
+  errorMsg: '',
 };
 
 const AlbumListReducer = (state = initialState, action) => {
@@ -13,7 +13,7 @@ const AlbumListReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         albums: action.payload,
-        errorMsg: "",
+        errorMsg: '',
       };
     }
 
