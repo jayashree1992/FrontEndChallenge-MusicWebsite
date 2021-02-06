@@ -8,12 +8,13 @@ import "./_listbox.scss";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import _ from "lodash";
+import { find } from "lodash";
 import { addFavorites, removeFavorites } from "../../redux/favorites/action";
+import { removeAlbumFromPlayList } from "../../redux/playlist/action";
 
 const ListBox = (props) => {
   const favoriteList = useSelector((state) => state.FavoriteList.favorites);
-  const is_favorite_album = _.find(
+  const is_favorite_album = find(
     favoriteList,
     (albumId) => albumId === props.album.id
   );
@@ -29,6 +30,10 @@ const ListBox = (props) => {
       dispatch(addFavorites(albumId));
       setFavorite(true);
     }
+  };
+
+  const removeAlbum = () => {
+    dispatch(removeAlbumFromPlayList(props.playListName, props.album.id));
   };
 
   return (
@@ -75,7 +80,7 @@ const ListBox = (props) => {
             </NavLink>
 
             {props.isPlayList ? (
-              <button onClick={() => {}} className="">
+              <button onClick={removeAlbum} className="">
                 {" "}
                 <DeleteIcon className=" list-ico-22" />
               </button>

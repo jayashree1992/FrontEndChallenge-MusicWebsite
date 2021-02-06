@@ -1,4 +1,9 @@
-import { SET_PLAY_LIST } from "./types";
+import {
+  SET_PLAY_LIST,
+  REMOVE_PLAYLIST,
+  REMOVE_ALBUM_FROM_PLAYLIST,
+} from "./types";
+import { filter } from "lodash";
 
 const initialState = {
   playLists: {},
@@ -25,6 +30,29 @@ const PlayListReducer = (state = initialState, action) => {
 
       return {
         playLists: playLists,
+      };
+    }
+
+    case REMOVE_PLAYLIST: {
+      let playLists = { ...state.playLists };
+      delete playLists[action.playListName];
+
+      return {
+        playLists: playLists,
+      };
+    }
+
+    case REMOVE_ALBUM_FROM_PLAYLIST: {
+      let newPlayList = {...state.playLists};
+      let albumsInCurrentPlayList = newPlayList[action.playListName];
+      albumsInCurrentPlayList = filter(albumsInCurrentPlayList, (albumId) => {
+        return albumId !== action.albumId;
+      });
+
+      newPlayList[action.playListName] = albumsInCurrentPlayList;
+
+      return {
+        playLists: newPlayList,
       };
     }
 

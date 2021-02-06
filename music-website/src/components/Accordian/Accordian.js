@@ -2,7 +2,9 @@ import React from "react";
 import _ from "lodash";
 import ListBox from "../../components/ListBox/ListBox";
 import "./_accordian.scss";
-import { useSelector } from "react-redux";
+import DeleteIcon from "@material-ui/icons/Delete";
+import { useSelector, useDispatch } from "react-redux";
+import { removePlayList } from "../../redux/playlist/action";
 import {
   Accordion,
   AccordionItem,
@@ -12,24 +14,40 @@ import {
 } from "react-accessible-accordion";
 
 const Accordian = (props) => {
+  const dispatch = useDispatch();
   const albumList = useSelector((state) => state.AlbumList.albums);
   const playListAlbums = _.filter(albumList, (o) =>
     props.albumIds.includes(o.id)
   );
+  const playListName = props.playListName;
 
   const playListDetails = (album) => {
-    return <ListBox album={album} isPlayList={true} />;
+    return (
+      <ListBox album={album} isPlayList={true} playListName={playListName} />
+    );
   };
+
+  const deletePlaylist = () => {
+    dispatch(removePlayList(playListName));
+  };
+
   return (
     <Accordion allowZeroExpanded>
       <AccordionItem>
-        <AccordionItemHeading style={{ border: "0px!important" }}>
-          <AccordionItemButton>{props.playListName}</AccordionItemButton>
+        <button onClick={deletePlaylist} className="del-play-btn">
+          {`Delete Playlist`}
+        </button>
+        <AccordionItemHeading className="aco-heading">
+          <AccordionItemButton>{playListName}</AccordionItemButton>
         </AccordionItemHeading>
-        <AccordionItemPanel className="accordian-playlists">
-          {playListAlbums.map((album) => {
-            return playListDetails(album);
-          })}
+
+        <AccordionItemPanel>
+          <div className="accordian-playlists">
+            {" "}
+            {playListAlbums.map((album) => {
+              return playListDetails(album);
+            })}
+          </div>
         </AccordionItemPanel>
       </AccordionItem>
     </Accordion>

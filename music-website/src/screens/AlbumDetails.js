@@ -1,13 +1,17 @@
 import React from "react";
+import MainWrapper from "../components/MainWrapper/MainWrapper";
 
 const AlbumDetails = (props) => {
   const albumDetails = props.location.albumDetail;
-  return (
-    <h1>
-      AlbumDetails
-      <span>{albumDetails.name}</span>
-    </h1>
-  );
+
+  const albumDetailContent = () => {
+
+
+    
+
+  };
+
+  return <MainWrapper content={albumDetailContent()} />;
 };
 
 export default AlbumDetails;

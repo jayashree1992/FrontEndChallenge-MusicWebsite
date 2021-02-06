@@ -2,181 +2,103 @@
 @import "../../stylesheets/helper";
 
 .card-container {
+  padding: 10px;
   display: grid;
-  perspective: 700px;
-  .card-flip {
-    display: grid;
-    grid-template: 1fr / 1fr;
-    grid-template-areas: "frontAndBack";
-    transform-style: preserve-3d;
-    transition: all 0.8s ease;
-    .card {
-      margin: 10px 10px;
-    }
-    div {
-      backface-visibility: hidden;
-      transform-style: preserve-3d;
-    }
-    .front {
-      grid-area: frontAndBack;
-      background-color: $primary-light !important;
-      border: none !important;
-      .custom {
-        background-color: $primary-light !important;
-        border: none !important;
-        outline: 1px double $lighter-white;
-        outline-offset: -15px;
+  .card-img-custom {
+    outline: 1px solid $lighter-white;
+    outline-offset: -10px;
+  }
+  .card-body {
+    margin-left: -15px;
+    .ico-wrapper {
+      float: left;
+      width: 15%;
+      top: 150px;
+      .heart-btn {
+        color: $lighter-white;
+        background-color: $tranparent;
+        border: none;
+        padding: 0px;
       }
-    }
-    .back {
-      grid-area: frontAndBack;
-      transform: rotateY(-180deg);
-      background-color: $highlight;
-      background-color: $primary-light;
-      .card-overlay {
-        border-radius: 2px;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        background-color: $highlight;
-        width: 90%;
-        height: 90%;
-        opacity: 0.8;
-        margin-left: 5%;
-        margin-top: 5%;
+      .heart-ico {
+        font-size: 12px;
+        margin-right: 5px;
+        @include media-md {
+          font-size: 18px;
+        }
       }
-      .cust-btn-wrapper {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        bottom: 0px;
-        right: 0px;
-        margin: auto;
-        .c-btn {
-          background-color: #fff;
-          border-radius: 25px;
-          font-size: 7px;
-          width: 100px;
-          .card-flip-icon {
-            color: $highlight;
-          }
-          .ico-sm {
-            font-size: 10px;
-          }
-          .ico-md {
-            font-size: 12px;
-          }
+      .heart-ico-filled {
+        color: $highlight;
+        font-size: 12px;
+        margin-right: 5px;
+        @include media-md {
+          font-size: 18px;
+        }
+      }
+      .view-ico {
+        font-size: 12px;
+        color: $lighter-white;
+        margin-right: 5px;
+        @include media-md {
+          font-size: 18px;
+        }
+        &:hover {
+          color: $highlight;
+        }
+      }
+      .add-btn {
+        background-color: $tranparent;
+        border: none;
+        color: $lighter-white;
+        margin: 0px;
+        padding: 0px;
+        .add-ico {
+          font-size: 15px;
           @include media-md {
-            font-size: 12px;
-            width: 140px;
-            .ico-sm {
-              font-size: 17px;
-            }
-            .ico-md {
-              font-size: 20px;
-            }
+            font-size: 22px;
+          }
+          &:hover {
+            color: $highlight;
           }
         }
       }
     }
-    &:hover {
-      transform: rotateY(180deg);
-    }
   }
 }
 
-.play-ico a {
-  width: 18%;
-  color: $white;
-  opacity: 0.8;
-  &:hover {
-    color: $highlight;
-  }
-}
-
-.ico-wrapper {
-  width: 15%;
-  color: $lighter-white;
-  .heart-btn {
-    color: $lighter-white;
-    background-color: $tranparent;
-    border: none;
-    padding: 0px;
-  }
-  .heart-ico {
-    font-size: 10px;
-    margin-top: -15px;
-    @include media-md {
-      font-size: 14px;
-      margin-top: -10px;
-    }
-  }
-  .heart-ico-filled {
-    color: $highlight;
-    font-size: 10px;
-    margin-top: -15px;
-    @include media-md {
-      font-size: 14px;
-      margin-top: -10px;
-    }
-  }
-  .view-ico {
-    font-size: 10px;
-    color: $lighter-white;
-    margin-top: -35px;
-    @include media-md {
-      font-size: 13px;
-      margin-top: -20px;
-    }
+.play-ico {
+  margin-top: -25px;
+  a {
+    width: 18%;
+    color: $white;
+    opacity: 0.9;
     &:hover {
       color: $highlight;
-    }
-  }
-  .add-btn {
-    background-color: $tranparent;
-    border: none;
-    color: $lighter-white;
-    margin: 0px;
-    padding: 0px;
-    .add-ico {
-      font-size: 13px;
-      margin-top: -55px;
-      @include media-md {
-        font-size: 15px;
-        margin-top: -35px;
-      }
-      &:hover {
-        color: $highlight;
-      }
     }
   }
 }
 
 .album-artist-name-wrapper {
-  width: 65%;
-  letter-spacing: 0.5px;
+  width: 90%;
   .artist-name {
-    font-size: 7px;
+    font-size: 8px;
     color: $lighter-white;
-    @include line-clamp(2, 1.412);
+    margin-top: 2px;
+    @include line-clamp(1, 1.412);
     @include media-md {
       font-size: 10px;
+      font-style: italic;
     }
   }
   .album-name {
-    font-size: 8px;
+    font-weight: bold;
+    font-size: 10px;
     font-family: $font;
-    letter-spacing: 1px;
-    color: $highlight;
-    opacity: 0.7;
-    @include line-clamp(2, 1.412);
+    letter-spacing: 0.5px;
+    color: $white;
+    @include line-clamp(1, 1.412);
     @include media-md {
-      font-size: 11px;
+      font-size: 13px;
     }
   }
-}
-
-.cust-album {
-  background-color: $primary-light !important;
-  border: none !important;
 }

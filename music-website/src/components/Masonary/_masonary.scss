@@ -32,7 +32,7 @@
     }
   }
 
-    $colors:$sea-green,$ochre-yellow, $chrimson-red,$magenta,$light-violet,$bright-pink;
+    $colors:$color-hue1,$color-hue2,$color-hue3,$color-hue4,$color-hue5,$color-hue6;
     $repeat: 36;
     @for $i from 1 through $repeat {
         .cat:nth-child(
